@@ -45,7 +45,11 @@ class fillBoilerController extends Controller
                 'coils_tempreture5' => 'required',
                 'coils_tempreture6' => 'required',
                 'blowdown_working'  => 'required',
-                'stack_temperature' => 'required'
+                'stack_temperature' => 'required',
+                'pump_no1' => 'required',
+                'pump_no2' => 'required',
+                'leakage1' => 'required',
+                'leakage2' => 'required'
             ]);
             
         }elseif($request->input('boiler')=='off'){
@@ -58,7 +62,11 @@ class fillBoilerController extends Controller
                 'coils_tempreture5' => '',
                 'coils_tempreture6' => '',
                 'blowdown_working'  => '',
-                'stack_temperature' => ''
+                'stack_temperature' => '',
+                'pump_no1' => '',
+                'pump_no2' => '',
+                'leakage1' => '',
+                'leakage2' => ''
             ]);
         }else{
             $this->validate(request(), [
@@ -76,6 +84,10 @@ class fillBoilerController extends Controller
         $boilerDetails -> coils_tempreture6=request('coils_tempreture6');
         $boilerDetails -> blowdown_working=$request->has('blowdown_working') ? $request->input('blowdown_working') : NULL;
         $boilerDetails -> stack_temperature=request('stack_temperature');
+        $boilerDetails -> pump_no1=$request->has('pump_no1') ? $request->input('pump_no1') : NULL;
+        $boilerDetails -> pump_no2=$request->has('pump_no2') ? $request->input('pump_no2') : NULL;
+        $boilerDetails -> leakage1=$request->has('leakage1') ? $request->input('leakage1') : NULL;
+        $boilerDetails -> leakage2=$request->has('leakage2') ? $request->input('leakage2') : NULL;
         $boilerDetails -> notes=request('notes');
         $boilerDetails -> pump_id=request('id');
         $boilerDetails -> user_name=request('user_name');

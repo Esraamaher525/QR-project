@@ -17,7 +17,7 @@
                         @csrf
                         <input type="hidden" name="id" value={{$id}}>
                         <input type="hidden" name="user_name" value= {{ Auth::user()->name }}>
-                        <label for="boiler"  class="col-md-2 px-0">Boiler</label>
+                        <label for="boiler"  class="col-sm-2 px-0">Boiler</label>
                         <div class="form-check form-check-inline">
                             <input type="radio" class="form-check-input @error('boiler') is-invalid @enderror" id="on" name="boiler" value="on" >
                             <label class="form-check-label" for="on">On</label>
@@ -94,14 +94,74 @@
                                 <div class="text-danger">{{ $message }}</div>
                                  @enderror
                         </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-6">
+                                <label for="pump_no1" class="col-md-4 px-0">Pump no:1</label>  
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input @error('pump_no1') is-invalid @enderror" id="on" name="pump_no1" value="on" >
+                                    <label class="form-check-label" for="on">On</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input @error('pump_no1') is-invalid @enderror" id="off" name="pump_no1" value="off">
+                                    <label class="form-check-label" for="off">Off</label>
+                                </div>
+                                @error('pump_no1')
+                                <div class="text-danger">{{ $message }}</div>
+                                 @enderror
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="leakage" class="col-md-4 px-0">Leakage</label>  
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input @error('leakage1') is-invalid @enderror" id="yes" name="leakage1" value="yes" >
+                                    <label class="form-check-label" for="yes">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input @error('leakage1') is-invalid @enderror" id="no" name="leakage1" value="no">
+                                    <label class="form-check-label" for="no">No</label>
+                                </div>
+                                @error('leakage1')
+                                <div class="text-danger">{{ $message }}</div>
+                                 @enderror
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-sm-6">
+                                <label for="pump_no2" class="col-md-4 px-0">Pump no:2</label>  
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input @error('pump_no2') is-invalid @enderror" id="on" name="pump_no2" value="on" >
+                                    <label class="form-check-label" for="on">On</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input @error('pump_no2') is-invalid @enderror" id="off" name="pump_no2" value="off">
+                                    <label class="form-check-label" for="off">Off</label>
+                                </div>
+                                @error('pump_no2')
+                                <div class="text-danger">{{ $message }}</div>
+                                 @enderror
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="leakage" class="col-md-4 px-0">Leakage</label>  
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input @error('leakage2') is-invalid @enderror" id="yes" name="leakage2" value="yes" >
+                                    <label class="form-check-label" for="yes">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" class="form-check-input @error('leakage2') is-invalid @enderror" id="no" name="leakage2" value="no">
+                                    <label class="form-check-label" for="no">No</label>
+                                </div>
+                                @error('leakage2')
+                                <div class="text-danger">{{ $message }}</div>
+                                 @enderror
+                            </div>
+                        </div>
                         <label for="blowdown_working" class="col-md-3 px-0">Blowdown Working</label>
                         <div class="form-check form-check-inline ">
-                            <input type="radio" class="form-check-input @error('blowdown_working') is-invalid @enderror" id="on" name="blowdown_working" value="on" >
-                            <label class="form-check-label" for="on">On</label>
+                            <input type="radio" class="form-check-input @error('blowdown_working') is-invalid @enderror" id="yes" name="blowdown_working" value="yes" >
+                            <label class="form-check-label" for="yes">Yes</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input @error('blowdown_working') is-invalid @enderror" id="off" name="blowdown_working" value="off">
-                            <label class="form-check-label" for="off">Off</label>
+                            <input type="radio" class="form-check-input @error('blowdown_working') is-invalid @enderror" id="no" name="blowdown_working" value="no">
+                            <label class="form-check-label" for="no">No</label>
                         </div>
                         @error('blowdown_working')
                                 <div class="text-danger">{{ $message }}</div>

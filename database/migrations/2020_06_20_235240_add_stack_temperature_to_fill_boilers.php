@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Equipment extends Migration
+class AddStackTemperatureToFillBoilers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class Equipment extends Migration
      */
     public function up()
     {
-        Schema::create('equipment', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('qr_code')->nullable();
-            $table->timestamps();
+        Schema::table('fill_boilers', function (Blueprint $table) {
+            $table->integer('stack_temperature')->nullable();
         });
     }
 
@@ -28,6 +25,8 @@ class Equipment extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('fill_boilers', function (Blueprint $table) {
+            $table->dropColumn(['stack_temperature']);
+        });
     }
 }

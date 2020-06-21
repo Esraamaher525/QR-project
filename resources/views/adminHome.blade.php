@@ -8,7 +8,8 @@
             <div class="card">
                 <div class="card-header">Add Machine</div>
                 <div class="card-body">
-                <div class="table-responsive">
+                @if(count($details) > 0)
+                <div class="table-responsive">     
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -25,24 +26,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                                @foreach ($details as $detailsMachine)
+                                @foreach ($details as $details)
                                         <tr>
-                                            <td>{{$detailsMachine -> user_name}} </td>
-                                            <td>{{$detailsMachine -> name}} </td>
-                                            <td>{{$detailsMachine -> H1}} </td>
-                                            <td>{{$detailsMachine -> H2}} </td>
-                                            <td>{{$detailsMachine -> H3}} </td>
-                                            <td>{{$detailsMachine -> V1}} </td>
-                                            <td>{{$detailsMachine -> V2}} </td>
-                                            <td>{{$detailsMachine -> V3}} </td>
-                                            <td>{{$detailsMachine -> notes}} </td>
-                                            <td>{{$detailsMachine -> time_create}} </td>
+                                            <td>{{$details -> user_name}} </td>
+                                            <td>{{$details -> name}} </td>
+                                            <td>{{$details -> H1}} </td>
+                                            <td>{{$details -> H2}} </td>
+                                            <td>{{$details -> H3}} </td>
+                                            <td>{{$details -> V1}} </td>
+                                            <td>{{$details -> V2}} </td>
+                                            <td>{{$details -> V3}} </td>
+                                            <td>{{$details -> notes}} </td>
+                                            <td>{{$details -> time_create}} </td>
                                         </tr>   
                                 @endforeach
                         </tbody>
                         </table>
+                     
                     </div>
-                    <div class="table-responsive">
+                    @else
+                         <div class="mb-3">
+                             <span class="my-3 text-danger">Not data found for pumps</span>
+                        </div>
+                    @endif
+                    @if(count($detailsBoilers) > 0)
+                    <div class="table-responsive mb-3"> 
                         <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -57,6 +65,10 @@
                             <th scope="col">Coils Tempreture 5</th>
                             <th scope="col">Coils Tempreture 6</th>
                             <th scope="col">Blowdown Working</th>
+                            <th scope="col">Pump no:1</th>
+                            <th scope="col">Leakage no:1</th>
+                            <th scope="col">Pump no:2</th>
+                            <th scope="col">Leakage no:2</th>
                             <th scope="col">Notes</th>
                             <th scope="col">Created at</th>
                             </tr>
@@ -75,13 +87,23 @@
                                             <td>{{$detailsBoiler -> coils_tempreture5}} </td>
                                             <td>{{$detailsBoiler -> coils_tempreture6}} </td>
                                             <td>{{$detailsBoiler -> blowdown_working}} </td>
+                                            <td>{{$detailsBoiler -> pump_no1}} </td>
+                                            <td>{{$detailsBoiler -> leakage1}} </td>
+                                            <td>{{$detailsBoiler -> pump_no2}} </td>
+                                            <td>{{$detailsBoiler -> leakage2}} </td>
                                             <td>{{$detailsBoiler -> notes}} </td>
-                                            <td>{{$detailsMachine -> time_create}} </td>
+
+                                            <td>{{$detailsBoiler -> time_create_boiler}} </td>
                                         </tr>   
                                 @endforeach
                         </tbody>
                         </table>
                     </div>
+                    @else
+                        <div class="mb-3">
+                                <span class="my-3 text-danger">Not data found for boilers</span>
+                        </div>
+                    @endif
                    <button type="button" class="btn btn-success" onclick="location.href='{{ route('createEquipment') }}'">Add Machine</button>
                 </div>
             </div>

@@ -17,18 +17,18 @@ class FillBoiler extends Migration
             $table->unsignedInteger('pump_id');
             $table->string('user_name');
             $table->string('boiler');
-            $table->string('pressure');
-            $table->string('coils_tempreture1');
-            $table->string('coils_tempreture2');
-            $table->string('coils_tempreture3');
-            $table->string('coils_tempreture4');
-            $table->string('coils_tempreture5');
-            $table->string('coils_tempreture6');
-            $table->string('blowdown_working');
-            $table->string('notes');
+            $table->integer('pressure')->nullable();
+            $table->integer('coils_tempreture1')->nullable();
+            $table->integer('coils_tempreture2')->nullable();
+            $table->integer('coils_tempreture3')->nullable();
+            $table->integer('coils_tempreture4')->nullable();
+            $table->integer('coils_tempreture5')->nullable();
+            $table->integer('coils_tempreture6')->nullable();
+            $table->string('blowdown_working')->nullable();
+            $table->string('notes')->nullable();
             $table->timestamps();
         });
-        Schema::rename(fill_boiler, fill_boilers);
+        // Schema::rename(fill_boiler, fill_boilers);
     }
 
     /**

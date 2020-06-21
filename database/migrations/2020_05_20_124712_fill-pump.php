@@ -22,10 +22,10 @@ class FillPump extends Migration
             $table->string('V1');
             $table->string('V2');
             $table->string('V3');
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->timestamps();
         });
-        Schema::rename(fill-pump, fill_pumps);
+        // Schema::rename(fill-pump, fill_pumps);
      
     }
 

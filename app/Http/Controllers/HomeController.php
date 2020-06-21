@@ -37,7 +37,7 @@ class HomeController extends Controller
         ->get();
         $detailsBoilers=fillBoiler::all();
         $detailsBoilers=fillBoiler::join('equipment', 'equipment.id', '=', 'pump_id')
-        ->select('fill_boilers.created_at as time_create','equipment.name','fill_boilers.*')
+        ->select('fill_boilers.created_at as time_create_boiler','equipment.name','fill_boilers.*')
         ->get();
         return view('adminHome',['details' => $details,'detailsBoilers' => $detailsBoilers]);
     }
