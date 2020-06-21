@@ -14,7 +14,7 @@ class fillBoilerController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

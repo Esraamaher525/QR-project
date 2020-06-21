@@ -11,7 +11,7 @@
                     </span>
                   @endguest  
                   @auth
-                <div class="card-header">Data Of Machine</div>
+                <div class="card-header">Data Of {{$name_machine}}</div>
                 <div class="card-body"> 
                     <form method="POST" action="/fill-pump">
                         <img  src="{{ asset('assets/images/pump.PNG') }}" width="100%">

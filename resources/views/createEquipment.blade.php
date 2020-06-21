@@ -11,12 +11,15 @@
                         @csrf
                         <div class="form-group">
                              <label for="name">Name</label>
-                            <input type="text" class="form-control"  id="name" name="name" placeholder="enter name of machine" class="form-control" class="@error('title') is-invalid @enderror">
-                            @error('title')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror"  id="name" name="name" placeholder="enter name of machine" class="form-control" class="@error('title') is-invalid @enderror">
+                            @error('name')
+                                <div class="text-danger">{{ $message }}</div>
                             @enderror
-                            <label for="type">Type</label>
-                            <input type="text" class="form-control"  id="type" name="type" placeholder="enter type of machine" class="form-control" >
+                            <label for="type" class="mt-2">Type</label>
+                            <input type="text" class="form-control @error('type') is-invalid @enderror"  id="type" name="type" placeholder="enter type of machine" class="form-control" >
+                            @error('type')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <input type="submit" value="Submit" class="btn btn-success">
                     </form>

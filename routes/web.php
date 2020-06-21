@@ -19,10 +19,11 @@ Route::get('/', function () {
 // details
 Route::get('/fill-data/{id}', function ($id) {
     $equipment=Equipment::find($id);
+    $name_machine=$equipment -> name;
     if($equipment -> type =='pump'){
-        return view('fillPump',['id' => $id]);
+        return view('fillPump',['id' => $id,'name_machine' => $name_machine]);
     }else if($equipment -> type =='boiler'){
-        return view('fillBoiler',['id' => $id]);
+        return view('fillBoiler',['id' => $id,'name_machine' => $name_machine]);
     }
    
 });

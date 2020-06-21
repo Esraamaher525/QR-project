@@ -12,6 +12,10 @@ class EquipmentController extends Controller
         return view('createEquipment');
     }
     public function store(){
+        $this->validate(request(), [
+            'name' => 'required',
+            'type' => 'required',
+        ]);
         $equipment=new Equipment();
         $equipment -> id=request('id');
         $equipment -> name=request('name');
